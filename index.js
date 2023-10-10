@@ -33,15 +33,13 @@ const questions = [
 ];
 
 inquirer.prompt(questions).then(answers => {
-    // This block is executed after the user answers all the questions
     
-    // Create a new SVG instance
+    
     const svg = new SVG();
 
-    // Set the text with its color
+    
     svg.setText(answers.text, answers.textColor);
 
-    // Create and set the shape with its color
     let shape;
     switch (answers.shape) {
         case 'Circle':
@@ -57,7 +55,7 @@ inquirer.prompt(questions).then(answers => {
     shape.setColor(answers.shapeColor);
     svg.setShape(shape);
 
-    // Save the SVG content to a file
+
     svg.saveToFile();
 
     console.log('Logo generation complete!');
